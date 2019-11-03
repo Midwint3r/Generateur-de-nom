@@ -5,10 +5,10 @@ from tkinter import *  # Import de tkinter
 def randomgen():
     if (univers.get() != "Univers"):
 
-        # Appelle de la fonction choix_univer
+        # Appel de la fonction choix_univer
         nom_univers, prenom_univers = choix_univers()
 
-        # Appelle de la fonction de génération de nom
+        # Appel de la fonction de génération de nom
         nom_genere=randomgen_nom(nom_univers)
         prenom_genere = randomgen_prenom(prenom_univers)
 
@@ -22,7 +22,7 @@ def randomgen():
 
 
 
-#Fonction permettant de générer un prénom en fnction de l'univers selectionné
+#Fonction permettant de générer un prénom en fonction de l'univers selectionné
 def randomgen_prenom(prenom_univers):
     prenom = Prenom.get()
     prenom_genere = liste_univers[prenom_univers][prenom[2].upper()]
