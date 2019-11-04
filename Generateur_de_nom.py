@@ -1,4 +1,4 @@
-from Univers import *  # Permet d'importer les univers.
+from Wordlist import *  # Permet d'importer les univers.
 from tkinter import *  # Import de tkinter
 
 #Fonction globale utilisant les autres fonctions pour permettre d'afficher le nom final généré
@@ -25,14 +25,14 @@ def randomgen():
 #Fonction permettant de générer un prénom en fonction de l'univers selectionné
 def randomgen_prenom(prenom_univers):
     prenom = Prenom.get()
-    prenom_genere = liste_univers[prenom_univers][prenom[2].upper()]
+    prenom_genere = wordlist[prenom_univers][prenom[2].upper()]
     return prenom_genere
 
 
 #Fonction permettant de générer un nom en fnction de l'univers selectionné
 def randomgen_nom(nom_univers):
     nom = Nom.get()
-    nom_genere = liste_univers[nom_univers][nom[0].upper()]
+    nom_genere = wordlist[nom_univers][nom[0].upper()]
     return nom_genere
 
 
@@ -63,7 +63,7 @@ Nom.set('Nom')
 nom_gen = StringVar()   #nom final généré
 nom_gen.set(' ')
 
-liste_univers = ('game_of_thrones', 'star_wars') #liste des univers pour le menu
+menu_univers = ('game_of_thrones', 'star_wars', 'warcraft') #liste des univers pour le menu
 univers = StringVar()
 univers.set("Univers")
 
@@ -80,7 +80,7 @@ button_Chiffrer = Button(fenetre, text="Générer !", command=randomgen)
 button_Chiffrer.grid(row=4, column=3, padx=15,pady=30, ipady=10)
 
 #Menu déroulant avec les différent univers
-select_universe = OptionMenu(fenetre, univers, *liste_univers)
+select_universe = OptionMenu(fenetre, univers, *menu_univers)
 select_universe.grid(row=4, column = 2, padx=15,pady=5, ipady=10)
 
 #Zone de sortie
